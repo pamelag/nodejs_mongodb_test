@@ -17,7 +17,6 @@ User.prototype.register = function(pUser, callback) {
 
             self.db.collection('users_collection').find({email: pUser.email}).toArray(function (err, user) {
                 var user_json = JSON.parse(JSON.stringify(user));
-                console.log("printing user email :: " + user_json[0].email);
 
                 callback(null, user_json[0].email);
             })
